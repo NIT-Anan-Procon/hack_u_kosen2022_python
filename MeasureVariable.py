@@ -1,0 +1,23 @@
+import os
+
+import cv2
+import numpy as np
+
+
+def MeasureVariable():
+    img1 = cv2.imread("images/img1.jpg", 0)
+    img2 = cv2.imread("images/img2.jpg", 0)
+    Object = cv2.bgsegm.createBackgroundSubtractorMOG()
+    mask = Object.apply(img1)
+    mask = Object.apply(img2)
+
+    cv2.imwrite("difference.jpg", mask)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+    difference = cv2.imread("difference.jpg", cv2.IMREAD_GRAYSCALE)
+    whitePixels = np.count_nonzero(difference)
+
+    os.rename("images/img2.jpg", "images/img1.jpg")
+
+    return int(whitePixels / difference.size * 100)
