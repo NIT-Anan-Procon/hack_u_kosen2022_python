@@ -13,7 +13,7 @@ CORS(
 )
 
 
-@app.route("", methods=["GET"])
+@app.route("/", methods=["GET"])
 def IndexHTML():
     return render_template("index.html")
 
