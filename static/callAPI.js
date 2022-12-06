@@ -15,7 +15,7 @@ function Test() {
         canvas.width,
         canvas.height
       );
-    fetch("http://202.231.44.30/measure-variable", {
+    fetch("http://202.231.44.30:8080/measure-variable", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
