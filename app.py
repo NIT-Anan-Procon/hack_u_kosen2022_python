@@ -19,7 +19,7 @@ def IndexHTML():
 
 
 @app.route("/measure-variable", methods=["POST"])
-def MeasureVariable():
+def CallMeasureVariable():
     with open("images/img2.jpg", mode="wb") as file:
         file.write(base64.b64decode(request.json["image"]))
     return MeasureVariable()
