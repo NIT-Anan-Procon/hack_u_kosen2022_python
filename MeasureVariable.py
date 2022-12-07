@@ -15,7 +15,7 @@ def MeasureVariable():
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
-    difference = cv2.imread("difference.jpg", cv2.IMREAD_GRAYSCALE)
+    difference = cv2.imread("images/difference.jpg", cv2.IMREAD_GRAYSCALE)
     whitePixels = np.count_nonzero(difference)
 
     os.rename("images/img2.jpg", "images/img1.jpg")
