@@ -11,7 +11,7 @@ def MeasureVariable():
     mask = Object.apply(img1)
     mask = Object.apply(img2)
 
-    cv2.imwrite("difference.jpg", mask)
+    cv2.imwrite("images/difference.jpg", mask)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
