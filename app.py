@@ -6,7 +6,7 @@ from flask_cors import CORS
 from MeasureVariable import MeasureVariable
 
 app = Flask(__name__)
-app.config["MAX_CONTENT_LENGTH"] = 100 * 1024 * 1024
+app.config["MAX_CONTENT_LENGTH"] = 1024 * 1024 * 1024
 CORS(
     app,
     supports_credentials=True
