@@ -20,4 +20,4 @@ def MeasureVariable():
 
     os.rename("images/img2.jpg", "images/img1.jpg")
 
-    return int(whitePixels / difference.size * 100)
+    return {"variable": int(whitePixels / difference.size * 100)}
