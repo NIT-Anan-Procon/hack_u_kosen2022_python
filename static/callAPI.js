@@ -28,5 +28,5 @@ function Test() {
       .then(function (data) {
         console.log(data["variable"]);
       });
-  }, 2000);
+  }, 500);
 }
