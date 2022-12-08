@@ -1,12 +1,13 @@
 import os
-import time
 
 import cv2
 import numpy as np
 
+#import time
+
 
 def MeasureVariable():
-    start = time.time()
+    #start = time.time()
     img1 = cv2.imread("images/img1.jpg", 0)
     img2 = cv2.imread("images/img2.jpg", 0)
     Object = cv2.bgsegm.createBackgroundSubtractorMOG()
@@ -22,5 +23,5 @@ def MeasureVariable():
 
     os.rename("images/img2.jpg", "images/img1.jpg")
 
-    print("time:" + str(time.time() - start))
+    #print("time:" + str(time.time() - start))
     return {"variable": int(whitePixels / difference.size * 100)}
