@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 from flask_cors import CORS
 
 from MeasureVariable import MeasureVariable
-from Expression import *
+from Expression import GetDegreeOfSurprise
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 100 * 1024 * 1024
