@@ -4,6 +4,7 @@ from flask import Flask, render_template, request
 from flask_cors import CORS
 
 from MeasureVariable import MeasureVariable
+from RecognizeFace import RecognizeFace
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 100 * 1024 * 1024
@@ -24,6 +25,10 @@ def CallMeasureVariable():
         file.write(base64.b64decode(request.json["image"]))
     return MeasureVariable()
 
+@app.route("/recognize-face", methods=["GET"])
+def CallRecognizeFace():
+    img_url = "images/img2.jpg"
+    return RecognizeFace(img_url)
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8082, debug=True)
