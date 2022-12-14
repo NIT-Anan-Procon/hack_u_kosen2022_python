@@ -23,12 +23,14 @@ def IndexHTML():
 def CallMeasureVariable():
     with open("images/img2.jpg", mode="wb") as file:
         file.write(base64.b64decode(request.json["image"]))
-    return MeasureVariable()
+    return {"variable": MeasureVariable(), "recognition": RecognizeFace("images/img2.jpg")["result"]}
+
 
 @app.route("/recognize-face", methods=["GET"])
 def CallRecognizeFace():
     img_url = "images/img2.jpg"
-    return RecognizeFace(img_url)
+    return RecognizeFace("images/img2.jpg")
+
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8082, debug=True)

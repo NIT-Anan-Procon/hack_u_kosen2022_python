@@ -27,6 +27,7 @@ function Test() {
       })
       .then(function (data) {
         console.log(data["variable"]);
+        console.log(data["recognition"]);
       });
   }, 500);
 }
