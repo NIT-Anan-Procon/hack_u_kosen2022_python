@@ -23,7 +23,7 @@ def IndexHTML():
 def CallMeasureVariable():
     with open("images/img2.jpg", mode="wb") as file:
         file.write(base64.b64decode(request.json["image"]))
-    return {"variable": MeasureVariable(), "recognition": RecognizeFace("images/img2.jpg")["result"]}
+    return {"variable": MeasureVariable(), "recognition": RecognizeFace()["result"]}
 
 
 if __name__ == "__main__":
